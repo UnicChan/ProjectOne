@@ -1,0 +1,17 @@
+{% extends 'pattern.html' %}
+
+{% block title%}
+    Make your Post!
+{% endblock %}
+
+{% block body%}
+    <p>Make your post!</p>
+    <form method="post">
+        <input type ="text" name="title" id="title"></br>
+        <textarea name="intro" id="intro"></textarea></br>
+        <textarea name="text" id="text"></textarea></br>
+        <textarea name="tag" id="tag"></textarea></br>
+        <textarea name="img_url" id="img_url"></textarea></br>
+        <input type ="submit" class="btn" value="Запостить">
+    </form>
+{% endblock %}

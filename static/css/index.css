@@ -1,0 +1,7 @@
+.demo__el {
+    max-width: 80px;
+    width: 10rem;
+    height: .5rem;
+    border-radius: 0.7rem;
+    background: rgb(53, 53, 53);
+}

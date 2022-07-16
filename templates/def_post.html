@@ -1,0 +1,76 @@
+{% extends 'pattern.html' %}
+
+{% block links_scripts %}
+<link href="../static/css/def_post.css" type="text/css" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat:wght@300;400&family=Open+Sans:wght@500&display=swap');
+</style>
+{% endblock %}
+
+{% block title%}
+{{ article.title }}
+{% endblock %}
+
+{% block body%}
+
+<div class="blog_body">
+    <div class="blog">
+        <div class="blog-part is-menu">
+            <p class="blog-menu thing"
+                style="height: 0.6rem;background-color: #fffb00;border-right: 2px solid #94918f;border-bottom: 2px solid #94918f;">
+            </p>
+            <p class="blog-menu thing" style="max-width: 130px;margin-bottom: -13px;"></p>
+            <p class="blog-menu thing" style="max-width: 70px;margin-bottom: -13px;"></p>
+            <p class="blog-menu thing" style="max-width: 90px;margin-bottom: -13px;"></p>
+            <p class="blog-menu thing" style="max-width: 115px;margin-bottom: -13px;"></p>
+            <p class="blog-menu thing" style="max-width: 50px;margin-bottom: -13px;"></p>
+            <p class="blog-menu mention thing"
+                style="max-width: 150px;margin-bottom: -13px;background-color: #fffb00;border-right: 2px solid #94918f;border-bottom: 2px solid #94918f;">
+            </p>
+            <p class="blog-menu thing"
+                style="max-width: 100px;background-color: #fffb00;border-right: 2px solid #94918f;border-bottom: 2px solid #94918f;">
+            </p>
+        </div>
+        <div class="blog-header blog-is-sticky">
+            <div class="blog-article header-article">
+                <div class="blog-big__title">{{ article.title }}</div>
+                <div class="blog-menu small-title">&nbsp;</div>
+            </div>
+            <div class="blog-article page-number">
+                {% if article.number < 10 %} NO. 0{{ article.number }} {% else %} NO. {{ article.number }} {% endif %}
+                    </div>
+            </div>
+            <div class="blog-header blog-is-sticky">
+                <div class="blog-article header-article">
+                    <div class="blog-big__title">&nbsp;</div>
+                    <div class="blog-menu small-title">&nbsp;</div>
+                </div>
+                <div class="blog-article">
+                    <h2>{{ article.intro }}</h2>
+                    <div class="blog-detail">
+                        <span>&nbsp;</span>
+                        <span>{{ article.tag }}</span>
+                    </div>
+                    <p>{{ article.text }}</p>
+                    </br>
+                </div>
+            </div>
+            <!--правая сторона-->
+            <div class="blog-part right-blog">
+                <marquee>
+                    <span>Самый крутой вейпшоп</span>
+                    <span>Как и сайт для него!</span>
+                    <span>Наверное, нужно лайкнуть меня</span>
+                </marquee>
+                <div class="blog-right-title-container">{{ article.date.date() }}</div>
+                <div class="blog-right">
+                    <div class="blog-right-container">
+                        <img style="width: 23rem; height: auto;" src="{{ article.img_url }}">
+                    </div>
+                </div>
+                <!--конец правая сторона-->
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

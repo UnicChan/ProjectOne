@@ -1,0 +1,21 @@
+{% extends 'pattern.html' %}
+
+{% block links_scripts %}
+
+{% endblock %}
+
+{% block title%}
+{{ article.title }}
+{% endblock %}
+
+{% block body%}
+    <p>Edit your post!</p>
+    <form method="post">
+        <input type ="text" name="title" id="title" value="{{ article.title }}"></br>
+        <textarea name="intro" id="intro">{{ article.intro }}</textarea></br>
+        <textarea name="text" id="text">{{ article.text }}</textarea></br>
+        <textarea name="tag" id="tag">{{ article.tag }}</textarea></br>
+        <textarea name="img_url" id="img_url">{{ article.img_url }}</textarea></br>
+        <input type ="submit" class="btn" value="Edit">
+    </form>
+{% endblock %}

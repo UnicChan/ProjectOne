@@ -1,0 +1,42 @@
+{% extends 'pattern.html' %}
+
+{% block links_scripts %}
+<link href="../static/css/posts.css" type="text/css" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat&display=swap');
+</style>
+{% endblock %}
+
+{% block title%}
+Edit your Post!
+{% endblock %}
+
+
+{% block body%}
+<div>
+    <section class="cards-wrapper">
+        {% for element in articles %}
+        <div class="card-grid-space">
+            {% if element.number < 10 %}
+            <div class="num">0{{ element.number }}</div>
+            {% else %}
+            <div class="num">{{ element.number }}</div>
+            {% endif %}
+            <a class="card" href="/posts/{{ element.number }}"
+                style="--bg-img: url({{ element.img_url }})">
+                <div>
+                    <h1>{{ element.title  }}</h1>
+                    <p>{{ element.intro  }}...</p>
+                    <div class="date">{{ element.date.date() }}</div>
+                    <div class="tags">
+                        <div class="tag">{{ element.tag }}</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        
+    </section>
+
+</div>
+{% endblock %}
