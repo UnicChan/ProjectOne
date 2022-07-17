@@ -54,6 +54,12 @@ def def_post(number):
     article = Article.query.get(number)
     return render_template('def_post.html', title = "Post", article=article)
 
+@app.route("/COPYposts/<int:number>")
+def def_post_copy(number):
+
+    article = Article.query.get(number)
+    return render_template('def_post_copy.html', title = "COPY", article=article)
+
 @app.route("/posts/<int:number>/edit", methods=['POST', 'GET'])
 def def_post_edit(number):
     article = Article.query.get_or_404(number)
@@ -66,7 +72,7 @@ def def_post_edit(number):
 
         try:
             db.session.commit()
-            return redirect('/posts/<int:number>')
+            return redirect('/posts')
         except:
             return "!Eroor!"
     else:
